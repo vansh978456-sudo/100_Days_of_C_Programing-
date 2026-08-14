@@ -1,47 +1,53 @@
-//Q3: Write a program to calculate the area and perimeter of a rectangle given its length and breadth.
+// Q4: Write a program to calculate the area and circumference of a circle given its radius.
 
 /*
 Sample Test Cases:
 Input 1:
-5 10
+7
 Output 1:
-Area=50, Perimeter=30
+Area=153.94, Circumference=43.96
 
 Input 2:
-3 7
+3
 Output 2:
-Area=21, Perimeter=20
+Area=28.27, Circumference=18.85
 
 */
 #include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265359
 
 int main() {
-    int num1, num2, sum;
+    double radius, area, circumference;
 
-    // Prompt the user to enter two integers
-    printf("Enter the first number: ");
-    scanf("%d", &num1);
+    // Input radius from user
+    printf("Enter the radius of the circle: ");
+    scanf("%lf", &radius);
 
-    printf("Enter the second number: ");
-    scanf("%d", &num2);
+    // Make the radius positive automatically if a negative is entered
+    radius = fabs(radius);
 
-    // Calculate the sum of the two numbers
-    sum = num1 + num2;
+    // Perform calculations
+    area = PI * radius * radius;
+    circumference = 2 * PI * radius;
 
-    // Display the result
-    printf("The sum of %d and %d is: %d\n", num1, num2, sum);
+    // Output the results
+    printf("Area of the circle: %.4f\n", area);
+    printf("Circumference of the circle: %.4f\n", circumference);
 
     return 0;
 }
-C:\Windows\System32>cd C:\Program Files\Notepad++
-
-C:\Program Files\Notepad++>gcc Enter_two_no.c
-
-C:\Program Files\Notepad++>a.exe
-Hello! Enter two numbers :a=^C
 C:\Program Files\Notepad++>gcc Day_3.c
 
 C:\Program Files\Notepad++>a.exe
 Enter the first number: 1
 Enter the second number: 2
 The sum of 1 and 2 is: 3
+
+C:\Program Files\Notepad++>gcc Day_2.c
+
+C:\Program Files\Notepad++>a.exe
+Enter the radius of the circle: 5
+Area of the circle: 78.5398
+Circumference of the circle: 31.4159 
